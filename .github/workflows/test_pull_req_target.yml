@@ -1,0 +1,17 @@
+name: Print Message on PR Target Event
+
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  print-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print a message
+        run: |
+          echo "This is a test message from a pull_request_target event!"
