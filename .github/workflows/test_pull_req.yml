@@ -1,0 +1,16 @@
+name: test normal pull req
+ 
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+ 
+
+jobs:
+  req-triggered:
+    runs-on: ubuntu
+    steps:
+      - run: |
+          echo "Job C running" 
+          # sleep 45 &
